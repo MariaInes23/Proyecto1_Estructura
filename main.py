@@ -3,9 +3,10 @@ from Mantenimiento import Mantenimiento
 from FlotaVehiculos import FlotaVehiculos
 
 def menu():
-    vehiculo = Vehiculo()
-    mantenimiento = Mantenimiento()
+    #vehiculo = Vehiculo()
+    #mantenimiento = Mantenimiento()
     flota = FlotaVehiculos()
+
     while True:
         print("\nMENÚ")
         print("1. Registrar Vehículo")
@@ -16,8 +17,15 @@ def menu():
         opcion = input("Seleccione una opción: ")
         
         if opcion == "1":
-            print("\nREGISTRAR")
-
+            print("\nREGISTRAR VEHÍCULO")
+            placa = input("Ingrese placa: ")
+            marca = input("Ingrese marca: ")
+            modelo = input("Ingrese modelo: ")
+            año = input("Ingrese el año: ")
+            kilometraje = input("Ingrese el kilometraje: ")
+            historial = input("Ingrese el historial: ")
+            flota.ingresarVehiculo(placa, marca, modelo, año, kilometraje, historial)
+            
         elif opcion == "2":
             print("\n ELIMINAR")
         
@@ -32,4 +40,4 @@ def menu():
             break
         else:
             print("Opción inválida. Intente de nuevo.")
-    menu()
+menu()
