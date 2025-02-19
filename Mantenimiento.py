@@ -1,4 +1,4 @@
-class Mantenimiento:
+class ClaseMantenimiento:
     def __init__(self, fecha, descripcion, costo):
         self.fecha = fecha
         self.descripcion = descripcion

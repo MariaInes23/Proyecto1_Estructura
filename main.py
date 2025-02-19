@@ -1,11 +1,8 @@
-from Vehiculo import Vehiculo
-from Mantenimiento import Mantenimiento
-from FlotaVehiculos import FlotaVehiculos
+from Vehiculo import ClaseVehiculo
+from Mantenimiento import ClaseMantenimiento
+from FlotaVehiculos import ClaseFlotaVehiculos
 
 def menu():
-    #vehiculo = Vehiculo()
-    #mantenimiento = Mantenimiento()
-    flota = FlotaVehiculos()
 
     while True:
         print("\nMENÚ")
@@ -17,18 +14,25 @@ def menu():
         opcion = input("Seleccione una opción: ")
         
         if opcion == "1":
-            print("\nREGISTRAR VEHÍCULO")
-            placa = input("Ingrese placa: ")
-            marca = input("Ingrese marca: ")
-            modelo = input("Ingrese modelo: ")
-            año = input("Ingrese el año: ")
-            kilometraje = input("Ingrese el kilometraje: ")
-            historial = input("Ingrese el historial: ")
-            flota.ingresarVehiculo(placa, marca, modelo, año, kilometraje, historial)
-            
-        elif opcion == "2":
-            print("\n ELIMINAR")
+             placa = input("Ingrese la placa del vehículo (6 caracteres alfanuméricos): ")
+             try:
+                    marca = input("Ingrese la marca del vehículo: ")
+                    modelo = input("Ingrese el modelo del vehículo: ")
+                    año = input("Ingrese el año del vehículo: ")
+                    kilometraje = input("Ingrese el kilometraje del vehículo: ")
+                    historial = []  # Inicializarlo vacío o con datos si es necesario
+
+                    # Crear el objeto vehiculo con todos los datos
+                    vehiculo = ClaseVehiculo(placa, marca, modelo, año, kilometraje, historial)
+                    
+                    # Verificar que las variables tienen datos
+                    print(f"Placa: {placa}, Marca: {marca}, Modelo: {modelo}, Año: {año}, Kilometraje: {kilometraje}, Historial: {historial}")
+                    print("Vehículo registrado correctamente.")
+             except ValueError as e:
+                    print(f"Error: {e}")
         
+        elif opcion == "2":
+            print("\n BUSCAR")      
         elif opcion == "3":
             print("\n BUSCAR")
            
