@@ -44,7 +44,7 @@ class ClaseFlotaVehiculos:
             print(f'Placa: {v.placa}, Marca: {v._marca}, Modelo: {v._modelo}, Año: {v.año}, Kilometraje: {v.kilometraje}')
             actual = actual.siguiente
 
-    def buscar_vehiculo(self, placa):
+    def buscar_vehiculo1(self, placa):
         actual = self.cabeza
         while actual:
             if actual.vehiculo.placa == placa:
@@ -53,5 +53,17 @@ class ClaseFlotaVehiculos:
                 return
             actual = actual.siguiente
         print(f'Vehículo con placa {placa} no encontrado.')
-
+    
+    def buscar_vehiculo(self, placa):
+        actual = self.cabeza
+        while actual:
+            if actual.vehiculo.placa == placa:
+                if isinstance(actual.vehiculo, ClaseVehiculo):
+                    return actual.vehiculo
+                else:
+                    print("El objeto encontrado no es una instancia válida de Vehiculo.")
+                    return None
+            actual = actual.siguiente
+        print(f'Vehículo con placa {placa} no encontrado.')
+        return None
     
