@@ -19,9 +19,9 @@ def menu():
              placa = input("Ingrese la placa del vehículo: ")
              marca = input("Ingrese la marca: ")
              modelo = input("Ingrese el modelo: ")
-             anio = int(input("Ingrese el año: "))
+             año = int(input("Ingrese el año: "))
              kilometraje = float(input("Ingrese el kilometraje: "))
-             vehiculo = ClaseVehiculo(placa, marca, modelo, anio, kilometraje)
+             vehiculo = ClaseVehiculo(placa, marca, modelo, año, kilometraje)
              flota.registrar_vehiculo(vehiculo)
              print("Vehículo registrado correctamente.")
         
@@ -43,5 +43,5 @@ def menu():
             break
         else:
             print("Opción inválida. Intente de nuevo.")
-            
+
 menu()

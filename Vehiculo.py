@@ -1,11 +1,44 @@
+class NodoMantenimiento:
+    def __init__(self, mantenimiento=None):
+        self.mantenimiento = mantenimiento
+        self.siguiente = None
+
+class ListaEnlazadaMantenimientos:
+    def __init__(self):
+        self.cabeza = None
+
+    def agregar(self, mantenimiento):
+        nuevo_nodo = NodoMantenimiento(mantenimiento)
+        if not self.cabeza:
+            self.cabeza = nuevo_nodo
+        else:
+            actual = self.cabeza
+            while actual.siguiente:
+                actual = actual.siguiente
+            actual.siguiente = nuevo_nodo
+
+    def mostrar(self):
+        actual = self.cabeza
+        while actual:
+            print(f'{actual.mantenimiento.fecha}: {actual.mantenimiento.descripcion} - ${actual.mantenimiento.costo}')
+            actual = actual.siguiente
+
 class ClaseVehiculo:
-    def __init__(self, placa, marca, modelo, año, kilometraje, historial):
-        self.placa = placa
-        self.marca = marca
-        self.modelo = modelo
-        self.año = año
-        self.kilometraje = kilometraje
-        self.historial = historial
+    def __init__(self, placa, marca, modelo, año, kilometraje, historial= None):
+        self._placa = placa
+        self._marca = marca
+        self._modelo = modelo
+        self._año = año
+        self._kilometraje = kilometraje
+        self._mantenimientos = historial if historial else ListaEnlazadaMantenimientos()
+
+    @property
+    def marca(self):
+        return self._marca
+
+    @property
+    def modelo(self):
+        return self._modelo
         
     @property
     def placa(self):
@@ -44,4 +77,12 @@ class ClaseVehiculo:
             self._kilometraje = dato
         else:
             raise ValueError("Kilometraje invalido")
+        
+
+    def agregar_mantenimiento(self, mantenimiento):
+        self._mantenimientos.agregar(mantenimiento)
+
+    def mostrar_historial(self):
+        self._mantenimientos.mostrar()
+
         
