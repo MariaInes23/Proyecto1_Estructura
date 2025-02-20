@@ -43,16 +43,6 @@ class ClaseFlotaVehiculos:
             v = actual.vehiculo
             print(f'Placa: {v.placa}, Marca: {v._marca}, Modelo: {v._modelo}, Año: {v.año}, Kilometraje: {v.kilometraje}')
             actual = actual.siguiente
-
-    def buscar_vehiculo1(self, placa):
-        actual = self.cabeza
-        while actual:
-            if actual.vehiculo.placa == placa:
-                v = actual.vehiculo
-                print(f'Placa: {v.placa}, Marca: {v._marca}, Modelo: {v._modelo}, Año: {v.año}, Kilometraje: {v.kilometraje}')
-                return
-            actual = actual.siguiente
-        print(f'Vehículo con placa {placa} no encontrado.')
     
     def buscar_vehiculo(self, placa):
         actual = self.cabeza

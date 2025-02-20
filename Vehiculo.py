@@ -19,6 +19,9 @@ class ListaEnlazadaMantenimientos:
 
     def mostrar(self):
         actual = self.cabeza
+        if not actual:
+            print('No hay mantenimientos realizados')
+            return
         while actual:
             print(f'{actual.mantenimiento.fecha}: {actual.mantenimiento.descripcion} - ${actual.mantenimiento.costo}')
             actual = actual.siguiente
