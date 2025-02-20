@@ -23,7 +23,7 @@ class ListaEnlazadaMantenimientos:
             print('No hay mantenimientos realizados')
             return
         while actual:
-            print(f'{actual.mantenimiento.fecha}: {actual.mantenimiento.descripcion} - ${actual.mantenimiento.costo}')
+            print(f'{actual.mantenimiento.fecha}: {actual.mantenimiento.descripcion} - Q{actual.mantenimiento.costo}')
             actual = actual.siguiente
 
 class ClaseVehiculo:
@@ -50,10 +50,10 @@ class ClaseVehiculo:
 
     @placa.setter
     def placa(self, nueva_placa): 
-        if len(nueva_placa) == 6 and nueva_placa.isalnum(): #Validación: 6 caracteres alfanumericos
+        if len(nueva_placa) == 7 and nueva_placa.isalnum(): 
             self._placa = nueva_placa
         else:
-            raise ValueError("La placa debe tener 6 caracteres y ser alfanumérica.")
+            raise ValueError("La placa debe tener 7 caracteres, entre numeros y letras")
         
         
     @property
@@ -63,7 +63,7 @@ class ClaseVehiculo:
     @año.setter
     def año(self, dato1): 
         dato1 = int(dato1)
-        if dato1 > 1900 and dato1 < 2025:
+        if dato1 > 1900 and dato1 < 2026:
             self._año = dato1
         else:
             raise ValueError("Año invalido")

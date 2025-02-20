@@ -51,7 +51,7 @@ class ClaseFlotaVehiculos:
                 if isinstance(actual.vehiculo, ClaseVehiculo):
                     return actual.vehiculo
                 else:
-                    print("El objeto encontrado no es una instancia válida de Vehiculo.")
+                    print("ERROR.")
                     return None
             actual = actual.siguiente
         print(f'Vehículo con placa {placa} no encontrado.')
