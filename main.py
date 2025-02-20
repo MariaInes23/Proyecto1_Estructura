@@ -23,6 +23,7 @@ def menu():
         opcion = input("Seleccione una opción: ")
         
         if opcion == "1":
+             print()
              print("+------------------------------+")
              print("|            AGREGAR           |")
              print("+------------------------------+")
@@ -49,6 +50,7 @@ def menu():
 
             
         elif opcion == "2":
+             print()
              print("+------------------------------+")
              print("|           ELIMINAR           |")
              print("+------------------------------+")
@@ -56,6 +58,7 @@ def menu():
              flota.eliminar_vehiculo(placa)    
 
         elif opcion == "3":
+             print()
              print("+------------------------------+")
              print("|            BUSCAR            |")
              print("+------------------------------+")
@@ -70,12 +73,14 @@ def menu():
                 print("No se encontró el vehículo.")
            
         elif opcion == "4":
+             print()
              print("+------------------------------+")
              print("|           LISTAR             |")
              print("+------------------------------+")
              flota.listar_vehiculos()
         
         elif opcion == "5":
+            print()
             print("+------------------------------+")
             print("|    REALIZAR MANTENIMIENTO    |")
             print("+------------------------------+")
