@@ -44,3 +44,4 @@ class ClaseVehiculo:
             self._kilometraje = dato
         else:
             raise ValueError("Kilometraje invalido")
+        
