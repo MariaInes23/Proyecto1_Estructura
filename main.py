@@ -2,6 +2,8 @@ from Vehiculo import ClaseVehiculo
 from Mantenimiento import ClaseMantenimiento
 from FlotaVehiculos import ClaseFlotaVehiculos
 
+flota = ClaseFlotaVehiculos()
+
 def menu():
 
     while True:
@@ -14,20 +16,14 @@ def menu():
         opcion = input("Seleccione una opción: ")
         
         if opcion == "1":
-             placa = input("Ingrese la placa del vehículo (6 caracteres alfanuméricos): ")
-             año = input("Ingrese el año del vehículo: ")
-             kilometraje = input("Ingrese el kilometraje del vehículo: ")
-             try:
-                    marca = input("Ingrese la marca del vehículo: ")
-                    modelo = input("Ingrese el modelo del vehículo: ")
-                    historial = []  
-                    vehiculo = ClaseVehiculo(placa, marca, modelo, año, kilometraje, historial)
-                    
-                    # Verificar que las variables tienen datos
-                    print(f"Placa: {placa}, Marca: {marca}, Modelo: {modelo}, Año: {año}, Kilometraje: {kilometraje},    Historial: {historial}")
-                    print("Vehículo registrado correctamente.")
-             except ValueError as e:
-                    print(f"Error: {e}")
+             placa = input("Ingrese la placa del vehículo: ")
+             marca = input("Ingrese la marca: ")
+             modelo = input("Ingrese el modelo: ")
+             anio = int(input("Ingrese el año: "))
+             kilometraje = float(input("Ingrese el kilometraje: "))
+             vehiculo = ClaseVehiculo(placa, marca, modelo, anio, kilometraje)
+             flota.registrar_vehiculo(vehiculo)
+             print("Vehículo registrado correctamente.")
         
         elif opcion == "2":
             print("\n BUSCAR")      
