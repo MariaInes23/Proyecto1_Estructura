@@ -15,18 +15,16 @@ def menu():
         
         if opcion == "1":
              placa = input("Ingrese la placa del vehículo (6 caracteres alfanuméricos): ")
+             año = input("Ingrese el año del vehículo: ")
+             kilometraje = input("Ingrese el kilometraje del vehículo: ")
              try:
                     marca = input("Ingrese la marca del vehículo: ")
                     modelo = input("Ingrese el modelo del vehículo: ")
-                    año = input("Ingrese el año del vehículo: ")
-                    kilometraje = input("Ingrese el kilometraje del vehículo: ")
-                    historial = []  # Inicializarlo vacío o con datos si es necesario
-
-                    # Crear el objeto vehiculo con todos los datos
+                    historial = []  
                     vehiculo = ClaseVehiculo(placa, marca, modelo, año, kilometraje, historial)
                     
                     # Verificar que las variables tienen datos
-                    print(f"Placa: {placa}, Marca: {marca}, Modelo: {modelo}, Año: {año}, Kilometraje: {kilometraje}, Historial: {historial}")
+                    print(f"Placa: {placa}, Marca: {marca}, Modelo: {modelo}, Año: {año}, Kilometraje: {kilometraje},    Historial: {historial}")
                     print("Vehículo registrado correctamente.")
              except ValueError as e:
                     print(f"Error: {e}")
