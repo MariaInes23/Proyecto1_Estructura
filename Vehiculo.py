@@ -26,6 +26,17 @@ class ListaEnlazadaMantenimientos:
             print(f'{actual.mantenimiento.fecha}: {actual.mantenimiento.descripcion} - Q{actual.mantenimiento.costo}')
             actual = actual.siguiente
 
+    def obtener_mantenimientos(self):
+        mantenimientos = []
+        actual = self.cabeza
+        while actual:
+            if actual.mantenimiento and isinstance(actual.mantenimiento.costo, (int, float)):
+                mantenimientos.append(actual.mantenimiento)
+            else:
+                print("Mantenimiento inválido o costo no numérico encontrado.")
+            actual = actual.siguiente
+        return mantenimientos
+    
 class ClaseVehiculo:
     def __init__(self, placa, marca, modelo, año, kilometraje, historial= None):
         self._placa = placa
@@ -87,5 +98,11 @@ class ClaseVehiculo:
 
     def mostrar_historial(self):
         self._mantenimientos.mostrar()
+    
+    def calcular_costo_total_mantenimientos(self):
+        mantenimientos = self._mantenimientos.obtener_mantenimientos()
+        total = sum(m.costo for m in mantenimientos if isinstance(m.costo, (int, float)))
+        print(f'Costo total de mantenimientos: Q{total:.2f}')
+        return total
 
         

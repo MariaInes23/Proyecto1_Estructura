@@ -69,6 +69,8 @@ def menu():
                 print()
                 print("-------Historial de Mantenimientos-------")
                 vehiculo.mostrar_historial()
+                print("-------Costo Total-------")
+                vehiculo.calcular_costo_total_mantenimientos()
              else:
                 print("No se encontró el vehículo.")
            
