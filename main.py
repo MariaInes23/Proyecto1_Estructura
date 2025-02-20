@@ -26,16 +26,22 @@ def menu():
              print("Vehículo registrado correctamente.")
         
         elif opcion == "2":
-            print("\n BUSCAR")      
+            print("\n ELIMINARR")  
+            placa = input("Ingrese la placa del vehículo a eliminar: ")
+            flota.eliminar_vehiculo(placa)    
         elif opcion == "3":
             print("\n BUSCAR")
+            placa = input("Ingrese la placa del vehículo a buscar: ")
+            flota.buscar_vehiculo(placa)
            
         elif opcion == "4":
             print("\n LISTAR")
+            flota.listar_vehiculos()
 
         elif opcion == "5":
             print("Saliendo del programa...")
             break
         else:
             print("Opción inválida. Intente de nuevo.")
+            
 menu()
